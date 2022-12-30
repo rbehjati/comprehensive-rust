@@ -14,9 +14,9 @@ fn main() {
 }
 ```
 
-Here the iterator returned by `v.iter()` will return a `Option<i32>` on every
-call to `next()`. It returns `Some(x)` until it is done, after which it will
-return `None`. The `while let` lets us keep iterating through all items.
+Here the iterator returned by `v.into_iter()` will return an `Option<i32>` on
+every call to `next()`. It returns `Some(x)` until it is done, after which it
+will return `None`. The `while let` lets us keep iterating through all items.
 
 See [pattern matching](../pattern-matching.md) for more details on patterns in
 Rust.
