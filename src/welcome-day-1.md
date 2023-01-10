@@ -20,8 +20,8 @@ and we should show students this right away.
 If you're teaching this in a classroom, this is a good place to go over the
 schedule. We suggest splitting the day into two parts (following the slides):
 
-* Morning: 9:00 to 12:00,
-* Afternoon: 13:00 to 16:00.
+* Morning: 10:00 to 13:00 - Basic syntax.
+* Afternoon: 14:00 to 17:00 - Memory management, and ownership. (**very important**)
 
 You can of course adjust this as necessary. Please make sure to include breaks,
 we recommend a break every hour!

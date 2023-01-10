@@ -29,6 +29,8 @@ Key points:
 * Explain that all variables are statically typed. Try removing `i32` to trigger
   type inference. Try with `i8` instead and trigger a runtime integer overflow.
 
+* Try removing the initialization. All variables must be initialized before use.
+
 * Change `let mut x` to `let x`, discuss the compiler error.
 
 * Show how `print!` gives a compilation error if the arguments don't match the
@@ -40,5 +42,13 @@ Key points:
 * Show the students the standard library, show them how to search for `std::fmt`
   which has the rules of the formatting mini-language. It's important that the
   students become familiar with searching in the standard library.
+  
+  * The [doc](https://doc.rust-lang.org/std/fmt/) gives the full grammar
+  
+  * Uses {} instead of % (C formatting). Escapes { and } with {{ and }}.
+  
+  * See the list of related macros.
+  
+  * _fmt::Debug should be implemented for all public types. In most cases, using #[derive(Debug)] is sufficient and recommended._
 
 </details>

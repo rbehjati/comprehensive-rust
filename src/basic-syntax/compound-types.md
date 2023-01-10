@@ -24,3 +24,15 @@ fn main() {
     println!("2nd index: {}", t.1);
 }
 ```
+
+<details>
+
+These have known size at compile time and are stack allocated.
+
+Note on formatting:
+
+ * ':' is used to ask for a special formatting. You can see the full grammar [here](https://doc.rust-lang.org/std/fmt/#syntax). 
+ * Display vs Debug formatting.
+ * There is the `dbg!` macro, but it prints to error, which is not captured in the playground.
+ 
+</details>

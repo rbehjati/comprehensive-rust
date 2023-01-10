@@ -10,3 +10,11 @@
   * Values have dynamic sizes determined at runtime.
   * Slightly slower than the stack: some book-keeping needed.
   * No guarantee of memory locality.
+  
+  
+<details>
+More reading:
+
+* All data stored on the stack must have a fixed known size.
+* [Stack & heap]( https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/the-stack-and-the-heap.html)
+</details>

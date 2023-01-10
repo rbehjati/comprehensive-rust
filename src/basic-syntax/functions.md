@@ -29,3 +29,13 @@ fn fizzbuzz_to(n: u32) {  // `-> ()` is normally omitted
     }
 }
 ```
+
+<details>
+
+Key points:
+
+* Statements are instructions that do something, they don't return a value. Expressions evaluate to a value, they return that value. 
+* The match expression: create a tuple on the fly. This is a useful pattern.
+* Note the range: 1..=n.
+* Possibly mention [const](https://doc.rust-lang.org/std/keyword.const.html) function: compile-time evaluable functions.
+</details>

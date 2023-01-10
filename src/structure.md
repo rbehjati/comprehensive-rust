@@ -20,3 +20,17 @@ The course is interactive and your questions will drive our exploration of Rust!
 * Discussions are very much encouraged!
 * We will likely talk about things ahead of the slides.
   * The slides are just a support and we are free to skip them as we like.
+
+
+<details>
+
+Each day is split into two parts:
+
+* Morning: 9:00 to 12:00,
+* Afternoon: 13:00 to 16:00.
+
+You can of course adjust this as necessary. Please make sure to include breaks,
+we recommend a break every hour!
+
+</details>
+

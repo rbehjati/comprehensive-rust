@@ -28,3 +28,10 @@ fn main() {
 ```
 
 * We will look much more at methods in today's exercise and in tomorrow's class.
+
+<details>
+
+* Note the . syntax. 
+* Note the we did not have to declare the variable as a reference. This happens on methods, but not ordinary functions. 
+* If there is a question about replacing the receiver type with "self", say that the method is then called "consuming", and you won't be able to use the object any more after that point. We will come back to that in the afternoon.
+</details>

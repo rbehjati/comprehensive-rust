@@ -22,3 +22,11 @@ fn main() {
 :                           :     `- - - - - - - - - - - - - - - -'
 `- - - - - - - - - - - - - -'
 ```
+
+<details>
+
+Try:
+* `println!("size: {}, len: {}, cap: {}", std::mem::size_of_val(&s1), s1.len(), s1.capacity())`
+
+* then `println!("{}", std::mem::size_of::<usize>());`
+</details>

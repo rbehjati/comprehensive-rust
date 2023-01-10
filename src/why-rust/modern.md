@@ -16,6 +16,9 @@ Rust is built with all the experience gained in the last 40 years.
 
 <details>
 
+No overhead FFI:
+* To communicate with other languages, Rust provides a _foreign function interface_ (FFI). Following Rust's design principles, the FFI provides a **zero-cost abstraction** where function calls between Rust and C have identical performance to C function calls [[1]](https://blog.rust-lang.org/2015/04/24/Rust-Once-Run-Everywhere.html).
+
 Key points:
 
 * Remind people to read the errors --- many developers have gotten used to

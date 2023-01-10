@@ -37,3 +37,13 @@ fn main() {
 ```
 
 We will look at mutating static data in the [chapter on Unsafe Rust](../unsafe.md).
+
+<details>
+Try:
+
+* Static: similar to const but static items aren’t inlined upon use. This means that there is only one instance for each value, and it’s at a fixed location in memory.
+* Make BANNER string.
+* Remove its type: Unlike let bindings, you must annotate the type of a static.
+* The type of a static value must be Sync unless the static value is mutable.
+* Static variables have a 'static lifetime.
+</details>

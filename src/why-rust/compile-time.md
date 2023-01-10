@@ -13,6 +13,10 @@ Static memory management at compile time:
 
 <details>
 
+* We already saw that the compiler prevents us to use an uninitialized variable
+* The others are more advanced, and we’ll see them later
+
+
 It is possible to produce memory leaks in (safe) Rust. Some examples
 are:
 

@@ -17,3 +17,11 @@ fn main() {
 * Rust is tracking the lifetimes of all references to ensure they live long
   enough.
 * We will talk more about borrowing when we get to ownership.
+
+<details>
+
+* Rust is scope-based
+
+* When the variable goes out of scope, its memory is deallocated. Rust knows at compile time that the variable is not accessible any longer. 
+
+</details>
