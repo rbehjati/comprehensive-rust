@@ -21,3 +21,11 @@ fn main() {
 
 * The `add` function _borrows_ two points and returns a new point.
 * The caller retains ownership of the inputs.
+
+<details>
+
+Try:
+
+* What do you expect to happen if I change the return type to `&Point`?
+  * See some lifetime errors before we get to it. 
+</details>

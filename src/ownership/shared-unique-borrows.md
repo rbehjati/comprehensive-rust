@@ -19,3 +19,18 @@ fn main() {
     println!("b: {b}");
 }
 ```
+
+<details>
+
+Key notes:
+
+* Unique mutable borrow
+  * Prevents iterator invalidation
+  * And situations like the [substring example](https://doc.rust-lang.org/book/ch04-03-slices.html)
+  * In multi-threaded: Prevents data races at compile time
+
+* Avoid dangling pointers: (**works better with String as the example**)
+  * The compiler ensures that the data/value won’t go out of scope (is not freed) before all references are gone out of scope
+  * This is done by keeping track of lifetimes.
+
+</details>

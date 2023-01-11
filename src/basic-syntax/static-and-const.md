@@ -46,4 +46,5 @@ Try:
 * Remove its type: Unlike let bindings, you must annotate the type of a static.
 * The type of a static value must be Sync unless the static value is mutable.
 * Static variables have a 'static lifetime.
+* Check `wrapping_add` in the docs.
 </details>

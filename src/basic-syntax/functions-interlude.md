@@ -21,3 +21,8 @@ fn main() {
     println!("cash prize: {}", pick_one(500, 1000));
 }
 ```
+
+<details>
+
+* But operator overloading is allowed, because it is essentially implementing Traits.  
+</details>

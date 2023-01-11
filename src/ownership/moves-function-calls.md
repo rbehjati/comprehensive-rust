@@ -14,3 +14,14 @@ fn main() {
     // say_hello(name);
 }
 ```
+
+<details>
+
+* How could we change this so that we could call `say_hello` again?
+* What if we used `&str` instead?
+* Actually, using `&str` is more generic. (auto deref)
+* The other alternative (which does not work for String, because internally it use Vec which implements Drop) is to make your type `Copy`.
+
+* Note: In a way everything in Rust is pass by value.
+* Note: It is not possible to move if the type is copy.
+</details>

@@ -20,3 +20,28 @@ fn main() {
     // takes_u32(y);
 }
 ```
+
+<details>
+
+Try:
+
+* Add a vec declaration, to show the use of `_` in type specification. 
+     ```
+      let v: Vec<_> = Vec::new(); 
+
+      // let mut v: Vec<_> = Vec::new(); 
+      // v.push(2);
+     ``` 
+* More interesting: 
+
+    ```
+    let v2 = v.iter().collect(); // cannot infer type.
+    let m = v.iter().collect::<Vec<_>>();
+    let m = v.iter().enumerate().collect::<std::collections::HashMap<_,_>>();
+    ```
+
+* Type inference happens at function boundaries. 
+  * Functions must fully specify parameter types in the signature.
+  * Give better error messages, and faster compilation.
+ 
+</details>

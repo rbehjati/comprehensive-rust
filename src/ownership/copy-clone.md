@@ -36,6 +36,9 @@ Copying and cloning are not the same thing:
 
 * Copying refers to bitwise copies of memory regions and does not work on arbitrary objects.
 * Cloning is a more general operation and also allows for custom behavior by implementing the `Clone` trait.
+  * Clone is a trait bound for Copy. See the documentation.
+  * Copy is a marker trait.
+  * Derive is an attribute.
 * Copying does not work on types that implement the `Drop` trait.
 
 In the above example, try the following:
