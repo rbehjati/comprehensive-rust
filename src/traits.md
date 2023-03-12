@@ -3,35 +3,50 @@
 Rust lets you abstract over types with traits. They're similar to interfaces:
 
 ```rust,editable
-trait Greet {
-    fn say_hello(&self);
+trait Shape {
+    fn draw(&self);
 }
 
-struct Dog {
-    name: String,
+struct Circle {
+    center: Point,
+    radius: i32,
 }
 
-struct Cat;  // No name, cats won't respond to it anyway.
+struct Polygon {
+    points: Vec<Point>,
+}
 
-impl Greet for Dog {
-    fn say_hello(&self) {
-        println!("Wuf, my name is {}!", self.name);
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+impl Point {
+    fn new(x: i32, y: i32) -> Point {
+        Point { x, y }
     }
 }
 
-impl Greet for Cat {
-    fn say_hello(&self) {
-        println!("Miau!");
+impl Shape for Circle {
+    fn draw(&self) {
+        println!("Circle centered at ({}, {}) with radius {}!", self.center.x, self.center.y, self.radius);
+    }
+}
+
+impl Shape for Polygon {
+    fn draw(&self) {
+        println!("Polygon with {} points!", self.points.len());
     }
 }
 
 fn main() {
-    let pets: Vec<Box<dyn Greet>> = vec![
-        Box::new(Dog { name: String::from("Fido") }),
-        Box::new(Cat),
+    let points = vec![Point::new(0, 0), Point::new(1, 1), Point::new(0, 1)];
+    let shapes: Vec<Box<dyn Shape>> = vec![
+        Box::new(Circle { center: Point::new(0, 0), radius: 5 }),
+        Box::new(Polygon { points }),
     ];
-    for pet in pets {
-        pet.say_hello();
+    for shape in shapes {
+        shape.draw();
     }
 }
 ```
@@ -39,16 +54,25 @@ fn main() {
 <details>
 
 * Traits may specify pre-implemented (default) methods and methods that users are required to implement themselves. Methods with default implementations can rely on required methods.
-* Types that implement a given trait may be of different sizes. This makes it impossible to have things like `Vec<Greet>` in the example above.
-* `dyn Greet` is a way to tell the compiler about a dynamically sized type that implements `Greet`.
-* In the example, `pets` holds Fat Pointers to objects that implement `Greet`. The Fat Pointer consists of two components, a pointer to the actual object and a pointer to the virtual method table for the `Greet` implementation of that particular object.
+* Types that implement a given trait may be of different sizes. This makes it impossible to have things like `Vec<Shape>` in the example above. Try replacing shapes with the following.
+
+```
+        let shapes = vec![
+            Circle { center: Point::new(0, 0), radius: 5 }, 
+            Polygon { points }
+        ];
+```
+
+* `dyn Shape` is a way to tell the compiler about a dynamically sized type that implements `Shape`. These are called trait objects.
+
+* In the example, `shapes` holds Fat Pointers to objects that implement `Shape`. The Fat Pointer consists of two components, a pointer to the actual object and a pointer to the virtual method table for the `Shape` implementation of that particular object.
 
 Compare these outputs in the above example:
 ```rust,ignore
-    println!("{} {}", std::mem::size_of::<Dog>(), std::mem::size_of::<Cat>());
-    println!("{} {}", std::mem::size_of::<&Dog>(), std::mem::size_of::<&Cat>());
-    println!("{}", std::mem::size_of::<&dyn Greet>());
-    println!("{}", std::mem::size_of::<Box<dyn Greet>>());
+    println!("{} {}", std::mem::size_of::<Circle>(), std::mem::size_of::<Circle>());
+    println!("{} {}", std::mem::size_of::<&Polygon>(), std::mem::size_of::<&Polygon>());
+    println!("{}", std::mem::size_of::<&dyn Shape>());
+    println!("{}", std::mem::size_of::<Box<dyn Shape>>());
 ```
 
 </details>

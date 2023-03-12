@@ -127,6 +127,7 @@
 
 - [Welcome](welcome-day-3.md)
 - [Traits](traits.md)
+  - [Trait Objects](traits/trait-objects.md)
   - [Deriving Traits](traits/deriving-traits.md)
   - [Default Methods](traits/default-methods.md)
   - [Important Traits](traits/important-traits.md)
