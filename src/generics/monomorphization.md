@@ -30,3 +30,12 @@ fn main() {
 
 This is a zero-cost abstraction: you get exactly the same result as if you had
 hand-coded the data structures without the abstraction.
+
+The fast runtime execution comes at the cost of compile time and binary size.
+
+
+<details>
+
+* Go back to the point example, and add an `fn is_above(other: &Point) -> bool` method to it.
+
+</details>

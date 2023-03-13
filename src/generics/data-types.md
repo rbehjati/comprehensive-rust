@@ -22,4 +22,6 @@ fn main() {
 
 * Fix the code to allow points that have elements of different types.
 
+* *Q*: How do you implement `Point`? _(Hint: See the next slide)_
+
 </details>

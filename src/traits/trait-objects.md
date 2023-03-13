@@ -1,6 +1,8 @@
 # Trait Objects
 
-We've seen how a function can take arguments which implement a trait:
+
+A trait object points to both an instance of a type implementing our specified trait and a table
+used to look up trait methods on that type at runtime.
 
 ```rust
 trait Greet {
@@ -66,3 +68,11 @@ Memory layout after allocating `pets`:
                                   
 
 ```
+
+<details>
+
+* You did not get into that issue in your `Shapes` excercise in Day-2 because you used an enum.
+
+* With trait objects, you get dynamic dispatch.
+
+</details>
