@@ -23,6 +23,17 @@ fn main() {
 
 <details>
 
+Talk about `Deref` and `DerefMut` too.
+* Used for
+  * Explicit dereferencing
+  * Implicitly used by the compiler in many contexts
+  * All immutable methods of the target type are implicitly implemented for the Derefed type.
+* Notable implementations of Deref
+  * Smart pointers, e.g., Box & Arc (desinged for smart pointers)
+  * MutexGuard
+  * Vec: deref to slice; and gets all methods implemented on slice.
+
+
 Discussion points:
 
 * You could implement `Add` for `&Point`. In which situations is that useful? 

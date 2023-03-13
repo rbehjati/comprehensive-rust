@@ -34,5 +34,15 @@ nothing here enforces that it is _the same_ `impl Display` type. If we used a si
 It would not work for this particular function, as the type we expect as input is likely not
 what `format!` returns. If we wanted to do the same via `: Display` syntax, we'd need two
 independent generic parameters.
+
+```rust
+fn get_x(name: impl Display) -> impl Display {
+    match format!("{name}").as_str() {
+        "foo" => format!("Hello {name}"),
+        _ => 42
+    }
+}
+
+```
     
 </details>

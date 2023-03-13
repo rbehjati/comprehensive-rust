@@ -39,6 +39,10 @@ Discussion points:
         overflow!
 * Try replacing `drop(a)` with `a.drop()`.
 
+* From the doc: You cannot implement both Copy and Drop on the same type. Types that are Copy get
+  implicitly duplicated by the compiler, making it very hard to predict when, and how often
+  destructors will be executed. As such, these types cannot have destructors.
+
 </details>
 
 [1]: https://doc.rust-lang.org/std/ops/trait.Drop.html

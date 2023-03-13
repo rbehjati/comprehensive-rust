@@ -38,8 +38,12 @@ fn main() {
 
 <details>
 
+* All methods on a Trait are implicitly public.
 * Types that implement a given trait may be of different sizes. This makes it impossible to have things like `Vec<Greet>` in the example above.
 * `dyn Greet` is a way to tell the compiler about a dynamically sized type that implements `Greet`.
+  * Try adding a new field `friend: dyn Greet,` to `Dog`.
+  * The golden rule of dynamically sized types is that we must always put values of dynamically sized types behind a pointer of some kind.
+  * Optional: By default, generic functions will work only on types that have a known size at compile time. (`Sized` vs `?Sized`).
 * In the example, `pets` holds Fat Pointers to objects that implement `Greet`. The Fat Pointer consists of two components, a pointer to the actual object and a pointer to the virtual method table for the `Greet` implementation of that particular object.
 * Compare these outputs in the above example:
      ```rust,ignore

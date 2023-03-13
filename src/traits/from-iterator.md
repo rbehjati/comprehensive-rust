@@ -14,14 +14,18 @@ fn main() {
 
 <details>
 
-`Iterator` implements
-`fn collect<B>(self) -> B
-where
-    B: FromIterator<Self::Item>,
-    Self: Sized`
+* `FromIterator::from_iter()` is often a more readable alternative to `Iterator::collect()`. 
 
-There are also implementations which let you do cool things like convert an
-`Iterator<Item = Result<V, E>>` into a `Result<Vec<V>, E>`.
+* `Iterator` implements
+  ```rust
+    fn collect<B>(self) -> B
+    where
+        B: FromIterator<Self::Item>,
+        Self: Sized`
+  ```
+
+  There are also implementations which let you do cool things like convert an
+  `Iterator<Item = Result<V, E>>` into a `Result<Vec<V>, E>`.
 
 </details>
 

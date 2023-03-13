@@ -27,8 +27,15 @@ fn main() {
 <details>
   
 * That's why it is common to only implement `From`, as your type will get `Into` implementation too.
-* When declaring a function argument input type like "anything that can be converted into a `String`", the rule is opposite, you should use `Into`.
-  Your function will accept types that implement `From` and those that _only_ implement `Into`.
+* Prefer using `Into` over using `From` when specifying trait bounds on a generic function. This
+  way, types that directly implement `Into` can be used as arguments as well.
+
+```rust
+struct Point(i32);
+fn add(f: impl Into<Point>, s: impl Into<Point>) -> i32 {
+    f.into().0 + s.into().0
+}
+```
     
 </details>
 

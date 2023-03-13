@@ -29,6 +29,8 @@ fn main() {
 
 <details>
 
+* `Item`: an associated type
+  * Improves readability by moving generic types that are under the control of the implementor into the trait.
 * `IntoIterator` is the trait that makes for loops work. It is implemented by collection types such as
   `Vec<T>` and references to them such as `&Vec<T>` and `&[T]`. Ranges also implement it.
 * The `Iterator` trait implements many common functional programming operations over collections 

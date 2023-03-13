@@ -1,8 +1,9 @@
 # Trait Objects
 
 
-A trait object points to both an instance of a type implementing our specified trait and a table
-used to look up trait methods on that type at runtime.
+A trait object (specified using [dyn](https://doc.rust-lang.org/std/keyword.dyn.html)) points to
+both an instance of a type implementing our specified trait and a table used to look up trait
+methods on that type at runtime.
 
 ```rust
 trait Greet {
@@ -73,6 +74,12 @@ Memory layout after allocating `pets`:
 
 * You did not get into that issue in your `Shapes` excercise in Day-2 because you used an enum.
 
-* With trait objects, you get dynamic dispatch.
+* Trait objects aren’t as generally useful as objects in other languages: their specific purpose is to allow abstraction across common behavior.
+
+* [Object Safety](https://doc.rust-lang.org/reference/items/traits.html#object-safety): Not every Trait can be made into a Trait Object. 
+
+* With trait objects, you get dynamic dispatch. This is as opposed to monomorphization that provides static dispatch.
+  * Static dispatch: the compiler knows what method you’re calling at compile time.
+  * Dynamic dispatch: the compiler can’t tell at compile time which method you’re calling, but emits code that at runtime will figure out which method to call.
 
 </details>

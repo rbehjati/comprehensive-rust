@@ -19,3 +19,10 @@ We will now look at some of the most common traits of the Rust standard library:
 [8]: https://doc.rust-lang.org/std/ops/trait.Mul.html
 [9]: https://doc.rust-lang.org/std/ops/trait.Drop.html
 [10]: https://doc.rust-lang.org/std/default/trait.Default.html
+
+
+<Details>
+
+* You can implement any Trait for any type as long as at least one of them is in your crate.
+
+</Details>

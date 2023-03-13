@@ -22,17 +22,24 @@ fn main() {
 
 <details>
 
-If you have an `FnOnce`, you may only call it once. It might consume captured values.
+* If you have an `FnOnce`, you may only call it once. It might consume captured values.
 
-An `FnMut` might mutate captured values, so you can call it multiple times but not concurrently.
+* An `FnMut` might mutate captured values, so you can call it multiple times but not concurrently.
 
-An `Fn` neither consumes nor mutates captured values, or perhaps captures nothing at all, so it can
-be called multiple times concurrently.
+* An `Fn` neither consumes nor mutates captured values, or perhaps captures nothing at all, so it can
+  be called multiple times concurrently.
 
-`FnMut` is a subtype of `FnOnce`. `Fn` is a subtype of `FnMut` and `FnOnce`. I.e. you can use an
-`FnMut` wherever an `FnOnce` is called for, and you can use an `Fn` wherever an `FnMut` or `FnOnce`
-is called for.
+* `FnMut` is a subtype of `FnOnce`. `Fn` is a subtype of `FnMut` and `FnOnce`. I.e. you can use an
+  `FnMut` wherever an `FnOnce` is called for, and you can use an `Fn` wherever an `FnMut` or `FnOnce`
+  is called for.
 
-`move` closures only implement `FnOnce`.
+* Non-capturing closures (don't capture anything from their env) are coercable to function pointers.
+  * Change the type of `func` to `fn(i32) -> i32`.
+
+* Capturing closure:
+  The compiler creates a struct for it, with a field for any thing that it captures from the environment. 
+  * If the closure only captures immutable references, then it can implement `Fn`.
+  * If it captures mutable reference (or exclusive reference), it can implement `FnMut` but not `Fn`. 
+  * `move` closures (that take ownership of variables in their env) only implement `FnOnce`.
 
 </details>
