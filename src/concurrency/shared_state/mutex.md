@@ -39,6 +39,7 @@ implementation.
       the data it protected might be in an inconsistent state. Calling `lock()` on a poisoned mutex
       fails with a [`PoisonError`]. You can call `into_inner()` on the error to recover the data
       regardless.
+* Try panicking in a thread::scope (not to prevent thread::scope from panicking, use join).
 
 [`PoisonError`]: https://doc.rust-lang.org/std/sync/struct.PoisonError.html  
     

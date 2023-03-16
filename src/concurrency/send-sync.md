@@ -17,6 +17,7 @@ know it is valid.
 
 <details>
 
+* These traits extend Rust’s concurrency guarantees to user-defined types as well as types provided by the standard library.
 * One can think of these traits as markers that the type has certain thread-safety properties.
 * They can be used in the generic constraints as normal traits.
   

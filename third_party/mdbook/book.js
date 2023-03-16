@@ -69,7 +69,7 @@ function playground_text(playground, hidden = true) {
                     name: "run",
                     bindKey: {
                         win: "Ctrl-Enter",
-                        mac: "Cmd-Enter"
+                        mac: "Ctrl-Enter"
                     },
                     exec: _editor => run_rust_code(playground_block)
                 });

@@ -32,6 +32,13 @@ fn main() {
   implements them both.
 * `Arc::clone()` has the cost of atomic operations that get executed, but after that the use of the
   `T` is free.
+* What did we gain here by using `Arc`? Try removing `Arc`:
+  * What does `println!("{thread_id:?}: {:p}", &v);` print when you don't have Arc?
+  * How about `println!("{thread_id:?}: {:p}", v, {:p}", &v);` when you have Arc?
+  * Benefit of using Arc:
+    * If Vec is too large: without Arc you get a performance & memory overhead with all the cloning.
+    * If the inner type T is not clone, you need Arc.
+* Rewrite with `thread::scope(|s| {`.
 * Beware of reference cycles, `Arc` does not use a garbage collector to detect them.
     * `std::sync::Weak` can help.
 
