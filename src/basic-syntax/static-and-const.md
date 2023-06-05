@@ -47,7 +47,6 @@ We will look at mutating static data in the [chapter on Unsafe Rust](../unsafe.m
 
 * Mention that `const` behaves semantically similar to C++'s `constexpr`.
 * `static`, on the other hand, is much more similar to a `const` or mutable global variable in C++.
-* It isn't super common that one would need a runtime evaluated constant, but it is helpful and safer than using a static.
 
 </details>
 
