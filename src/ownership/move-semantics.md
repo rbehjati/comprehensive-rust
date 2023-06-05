@@ -15,7 +15,7 @@ fn main() {
 * The data was _moved_ from `s1` and `s1` is no longer accessible.
 * When `s1` goes out of scope, nothing happens: it has no ownership.
 * When `s2` goes out of scope, the string data is freed.
-* There is always _exactly_ one variable binding which owns a value.
+* There is always _exactly_ one variable binding that owns a value.
 
 <details>
 
