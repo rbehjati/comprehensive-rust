@@ -1,6 +1,6 @@
-# Static and Constant Variables
+# Static and Constant Items
 
-Global state is managed with static and constant variables.
+Global state is managed with static and constant items.
 
 ## `const`
 
@@ -28,7 +28,8 @@ According to the [Rust RFC Book][1] these are inlined upon use.
 
 ## `static`
 
-You can also declare static variables:
+You can also declare static items. A static item must be initialized with a
+constant expression evaluated at compile time:
 
 ```rust,editable
 static BANNER: &str = "Welcome to RustOS 3.14";
