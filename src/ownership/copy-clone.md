@@ -36,8 +36,9 @@ Copying and cloning are not the same thing:
 
 * Copying refers to bitwise copies of memory regions and does not work on arbitrary objects.
 * Copying does not allow for custom logic (unlike copy constructors in C++).
-* Cloning is a more general operation and also allows for custom behavior by implementing the `Clone` trait.
-* Copying does not work on types that implement the `Drop` trait.
+* Cloning is a more general operation and also allows for custom behavior by
+    implementing the `Clone` trait.
+* Any type implementing `Drop` can’t be `Copy`.
 
 In the above example, try the following:
 
