@@ -9,6 +9,13 @@
 | Unicode scalar values  | `char`                                     | `'a'`, `'α'`, `'∞'`           |
 | Booleans               | `bool`                                     | `true`, `false`               |
 
+  ```rust,editable
+  fn main() {
+      let a = 10;
+      println!("a: {a}, size of a: {} bytes", std::mem::size_of_val(&a));
+  }
+  ```
+
 The types have widths as follows:
 
 * `iN`, `uN`, and `fN` are _N_ bits wide,
