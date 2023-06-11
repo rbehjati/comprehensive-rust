@@ -25,12 +25,12 @@ Key points:
   writing a loop using `for` should result in roughly the same low level
   instructions as using the `.iter().fold()` construct.
 
-* It may be worth mentioning that Rust enums are 'Algebraic Data Types', also
-  known as 'sum types', which allow the type system to express things like
+* It may be worth mentioning that Rust enums are _Algebraic Data Types_, also
+  known as _Sum Types_, which allow the type system to express things like
   `Option<T>` and `Result<T, E>`.
 
 * Remind people to read the errors --- many developers have gotten used to
-  ignore lengthy compiler output. The Rust compiler is significantly more
+  ignoring lengthy compiler output. The Rust compiler is significantly more
   talkative than other compilers. It will often provide you with _actionable_
   feedback, ready to copy-paste into your code.
 

@@ -6,7 +6,7 @@
 
 This is a three day Rust course developed by the Android team. The course covers
 the full spectrum of Rust, from basic syntax to advanced topics like generics
-and error handling. It also includes Android-specific content on the last day.
+and error handling.
 
 The goal of the course is to teach you Rust. We assume you don't know anything
 about Rust and hope to:
